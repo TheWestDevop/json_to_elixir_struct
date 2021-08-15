@@ -52,7 +52,7 @@ defmodule JsonToElixirStruct do
 
     cond do
       is_integer(struct_key) -> key <> ": integers, "
-      is_binary(struct_key) -> key <> ": string, "
+      String.valid?(struct_key) -> key <> ": string, "
       is_float(struct_key) -> key <> ": floats, "
       is_boolean(struct_key) -> key <> ": boolean, "
       is_nil(struct_key) -> key <> ": nil, "
